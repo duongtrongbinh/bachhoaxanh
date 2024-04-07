@@ -1,0 +1,11 @@
+{
+    "name": "FontEnd",
+    "alias": "fontend",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\FontEnd\\App\\Providers\\FontEndServiceProvider"
+    ],
+    "files": []
+}
