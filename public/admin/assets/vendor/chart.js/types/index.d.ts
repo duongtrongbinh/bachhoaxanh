@@ -2160,7 +2160,7 @@ export declare class BasePlatform {
    * @param {Chart} chart - Chart from which to listen for event
    * @param {string} type - The ({@link ChartEvent}) type to listen for
    * @param listener - Receives a notification (an object that implements
-   * the {@link ChartEvent} interface) when an event of the specified type occurs.
+   * the {@link ChartEvent} Interface) when an event of the specified type occurs.
    */
   addEventListener(chart: Chart, type: string, listener: (e: ChartEvent) => void): void;
   /**

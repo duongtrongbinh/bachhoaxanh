@@ -2,7 +2,7 @@
 
 namespace App\Http\Services;
 
-use App\Http\Repositories\CategoryRepository;
+use App\Http\Repositories\CategoryBaseRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -11,7 +11,7 @@ class CategoryService
 {
     protected $categoryRepository;
 
-    public function __construct(CategoryRepository $categoryRepository)
+    public function __construct(CategoryBaseRepository $categoryRepository)
     {
         $this->categoryRepository = $categoryRepository;
     }
@@ -49,5 +49,10 @@ class CategoryService
     public function restore(int|array $id): bool
     {
         return $this->categoryRepository->restore($id);
+    }
+
+    public function deletedSoft($id)
+    {
+        return $this->categoryRepository->statusChange($id);
     }
 }

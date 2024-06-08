@@ -16910,7 +16910,7 @@
        * (A) If using class declaration in typescript (since echarts 5):
        * ```ts
        * import {ComponentOption} from '../model/option.js';
-       * export interface XxxOption extends ComponentOption {
+       * export Interface XxxOption extends ComponentOption {
        *     aaa: number
        * }
        * export class XxxModel extends Component {
@@ -16924,7 +16924,7 @@
        * ```ts
        * import {inheritDefaultOption} from '../util/component.js';
        * import {XxxModel, XxxOption} from './XxxModel.js';
-       * export interface XxxSubOption extends XxxOption {
+       * export Interface XxxSubOption extends XxxOption {
        *     bbb: number
        * }
        * class XxxSubModel extends XxxModel {
@@ -18128,7 +18128,7 @@
         return filterBySubType(result, condition);
       };
       /**
-       * The interface is different from queryComponents,
+       * The Interface is different from queryComponents,
        * which is convenient for inner usage.
        *
        * @usage
@@ -18628,7 +18628,7 @@
           var timelineModel = ecModel.getComponent('timeline');
 
           if (timelineModel) {
-            option = clone( // FIXME:TS as TimelineModel or quivlant interface
+            option = clone( // FIXME:TS as TimelineModel or quivlant Interface
             timelineOptions[timelineModel.getCurrentIndex()]);
           }
         }

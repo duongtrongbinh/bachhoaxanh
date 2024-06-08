@@ -15,16 +15,16 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.fr_FR',
   '  <dd>Windows, Linux ou macOS : Ctrl+F9\n' +
   '</dl>\n' +
   '\n' +
-  "<p>La navigation débutera sur le premier élément de l'interface utilisateur, qui sera mis en surbrillance ou bien souligné dans le cas du premier élément du\n" +
+  "<p>La navigation débutera sur le premier élément de l'Interface utilisateur, qui sera mis en surbrillance ou bien souligné dans le cas du premier élément du\n" +
   "  chemin d'éléments du pied de page.</p>\n" +
   '\n' +
-  "<h1>Naviguer entre les sections de l'interface utilisateur</h1>\n" +
+  "<h1>Naviguer entre les sections de l'Interface utilisateur</h1>\n" +
   '\n' +
-  "<p>Pour passer d'une section de l'interface utilisateur à la suivante, appuyez sur <strong>Tabulation</strong>.</p>\n" +
+  "<p>Pour passer d'une section de l'Interface utilisateur à la suivante, appuyez sur <strong>Tabulation</strong>.</p>\n" +
   '\n' +
-  "<p>Pour passer d'une section de l'interface utilisateur à la précédente, appuyez sur <strong>Maj+Tabulation</strong>.</p>\n" +
+  "<p>Pour passer d'une section de l'Interface utilisateur à la précédente, appuyez sur <strong>Maj+Tabulation</strong>.</p>\n" +
   '\n' +
-  "<p>L'ordre de <strong>Tabulation</strong> de ces sections de l'interface utilisateur est le suivant :\n" +
+  "<p>L'ordre de <strong>Tabulation</strong> de ces sections de l'Interface utilisateur est le suivant :\n" +
   '\n' +
   '<ol>\n' +
   '  <li>Barre du menu</li>\n' +
@@ -36,14 +36,14 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.fr_FR',
   "  <li>Poignée de redimensionnement de l'éditeur dans le pied de page</li>\n" +
   '</ol>\n' +
   '\n' +
-  "<p>Si une section de l'interface utilisateur n'est pas présente, elle sera ignorée.</p>\n" +
+  "<p>Si une section de l'Interface utilisateur n'est pas présente, elle sera ignorée.</p>\n" +
   '\n' +
   "<p>Si le pied de page comporte un ciblage par navigation au clavier et qu'il n'y a aucune barre latérale visible, appuyer sur <strong>Maj+Tabulation</strong>\n" +
   "  déplace le ciblage vers le premier groupe de barres d'outils et non le dernier.\n" +
   '\n' +
-  "<h1>Naviguer au sein des sections de l'interface utilisateur</h1>\n" +
+  "<h1>Naviguer au sein des sections de l'Interface utilisateur</h1>\n" +
   '\n' +
-  "<p>Pour passer d'un élément de l'interface utilisateur au suivant, appuyez sur la <strong>Flèche</strong> appropriée.</p>\n" +
+  "<p>Pour passer d'un élément de l'Interface utilisateur au suivant, appuyez sur la <strong>Flèche</strong> appropriée.</p>\n" +
   '\n' +
   '<p>Les touches fléchées <strong>Gauche</strong> et <strong>Droite</strong></p>\n' +
   '\n' +
@@ -61,11 +61,11 @@ tinymce.Resource.add('tinymce.html-i18n.help-keynav.fr_FR',
   "  <li>se déplacent entre les éléments au sein d'un menu contextuel de barre d'outils.</li>\n" +
   '</ul>\n' +
   '\n' +
-  "<p>Les <strong>Flèches</strong> parcourent la section de l'interface utilisateur ciblée.</p>\n" +
+  "<p>Les <strong>Flèches</strong> parcourent la section de l'Interface utilisateur ciblée.</p>\n" +
   '\n' +
   '<p>Pour fermer un menu ouvert, un sous-menu ouvert ou un menu contextuel ouvert, appuyez sur <strong>Echap</strong>.\n' +
   '\n' +
-  "<p>Si l'actuel ciblage se trouve en « haut » d'une section spécifique de l'interface utilisateur, appuyer sur <strong>Echap</strong> permet également de quitter\n" +
+  "<p>Si l'actuel ciblage se trouve en « haut » d'une section spécifique de l'Interface utilisateur, appuyer sur <strong>Echap</strong> permet également de quitter\n" +
   '  entièrement la navigation au clavier.</p>\n' +
   '\n' +
   "<h1>Exécuter un élément de menu ou un bouton de barre d'outils</h1>\n" +

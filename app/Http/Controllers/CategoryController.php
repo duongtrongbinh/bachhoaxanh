@@ -28,11 +28,13 @@ class CategoryController extends Controller
         return $this->responseOk($this->categoryService->getAll());
     }
 
+
     public function store(Request $request): JsonResponse
     {
         $author = $this->categoryService->create($request->validated());
         return $this->responseOk($author);
     }
+
 
     public function show(Category $category): JsonResponse
     {
@@ -44,7 +46,6 @@ class CategoryController extends Controller
         $category = $this->categoryService->update($category->id, $request->validated());
         return $this->responseOk($category);
     }
-
     public function destroy(Request $request): JsonResponse
     {
         $result = $this->categoryService->destroy($request->id);

@@ -178,7 +178,7 @@ function create(input, value) {
         throw new ParchmentError("Unable to create " + input + " blot");
     }
     var BlotClass = match;
-    var node = 
+    var node =
     // @ts-ignore
     input instanceof Node || input['nodeType'] === Node.TEXT_NODE ? input : BlotClass.create(value);
     return new BlotClass(node, value);
@@ -7838,8 +7838,8 @@ function EE(fn, context, once) {
 }
 
 /**
- * Minimal `EventEmitter` interface that is molded against the Node.js
- * `EventEmitter` interface.
+ * Minimal `EventEmitter` Interface that is molded against the Node.js
+ * `EventEmitter` Interface.
  *
  * @constructor
  * @api public

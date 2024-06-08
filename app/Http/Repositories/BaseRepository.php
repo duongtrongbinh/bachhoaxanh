@@ -2,12 +2,12 @@
 
 namespace App\Http\Repositories;
 
-use App\Http\Repositories\RepositoryInteface;
+use App\Http\Repositories\BaseRepositoryInteface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
-abstract class Repository implements RepositoryInteface
+abstract class BaseRepository implements BaseRepositoryInteface
 {
     protected $model;
 
@@ -21,6 +21,10 @@ abstract class Repository implements RepositoryInteface
     public function setModel(): void
     {
         $this->model = app()->make($this->getModel());
+    }
+    public function PaginateIndex($query,$params)
+    {
+        return $query->paginate($params);
     }
 
     public function getAll(): Collection
@@ -65,5 +69,15 @@ abstract class Repository implements RepositoryInteface
     public function restore(int|array $id): bool
     {
         return $this->model->onlyTrashed()->whereIn('id', is_array($id) ? $id : [$id])->restore();
+    }
+
+    public function statusChange($id,$status = 0)
+    {
+        $record = $this->findOrFail($id);
+        if ($record) {
+            $record->update(['status' => $status]);
+            return true;
+        }
+        return false;
     }
 }

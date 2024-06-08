@@ -17608,7 +17608,7 @@ function (_super) {
    * (A) If using class declaration in typescript (since echarts 5):
    * ```ts
    * import {ComponentOption} from '../model/option.js';
-   * export interface XxxOption extends ComponentOption {
+   * export Interface XxxOption extends ComponentOption {
    *     aaa: number
    * }
    * export class XxxModel extends Component {
@@ -17622,7 +17622,7 @@ function (_super) {
    * ```ts
    * import {inheritDefaultOption} from '../util/component.js';
    * import {XxxModel, XxxOption} from './XxxModel.js';
-   * export interface XxxSubOption extends XxxOption {
+   * export Interface XxxSubOption extends XxxOption {
    *     bbb: number
    * }
    * class XxxSubModel extends XxxModel {
@@ -18830,7 +18830,7 @@ function (_super) {
     return filterBySubType(result, condition);
   };
   /**
-   * The interface is different from queryComponents,
+   * The Interface is different from queryComponents,
    * which is convenient for inner usage.
    *
    * @usage
@@ -19330,7 +19330,7 @@ function () {
       var timelineModel = ecModel.getComponent('timeline');
 
       if (timelineModel) {
-        option = clone( // FIXME:TS as TimelineModel or quivlant interface
+        option = clone( // FIXME:TS as TimelineModel or quivlant Interface
         timelineOptions[timelineModel.getCurrentIndex()]);
       }
     }
@@ -67988,7 +67988,7 @@ var candlestickLayout = {
           x: pmin[0],
           y: pmin[1],
           width:  candleWidth ,
-          height:  pmax[1] - pmin[1] 
+          height:  pmax[1] - pmin[1]
         };
       }
 
@@ -90903,7 +90903,7 @@ function (_super) {
   /**
    * FIXME
    * Do not publish to thirt-part-dev temporarily
-   * util the interface is stable. (Should it return
+   * util the Interface is stable. (Should it return
    * a function but not visual meta?)
    *
    * @pubilc
