@@ -4,8 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\district;
 class Ward extends Model
 {
+    protected $fillable = [
+        'district_id',
+        'name',
+    ];
     use HasFactory;
+    public function district()
+    {
+        return $this->belongsTo(District::class);
+    }
 }

@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\AddressController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +22,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::view('', 'dashboard.main')->name('dashboard');
+Route::resource('user',UserController::class);
+Route::resource('post',PostController::class);
+Route::resource('comment',CommentController::class);

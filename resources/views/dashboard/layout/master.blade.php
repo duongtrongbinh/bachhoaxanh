@@ -28,7 +28,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('admin/assets/css/style.css') }}" rel="stylesheet">
-
+    <script src="{{ asset('js/app.js') }}"></script>
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -67,11 +67,11 @@
     <script src="{{ asset('admin/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/php-email-form/validate.js') }}"></script>
-  
+
     <!-- Template Main JS File -->
     <script src="{{ asset('admin/assets/js/main.js') }}"></script>
     @yield('js')
-  
+
   </body>
-  
+
   </html>
