@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Services;
-use App\Http\Repositories\Repository\VoucherRepository;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use App\Http\Repositories\VoucherRepository;
 use App\Utils\Constants;
+use Illuminate\Database\Eloquent\Model;
 
 
 class VoucherService

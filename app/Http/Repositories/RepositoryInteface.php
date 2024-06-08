@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
-interface BaseRepositoryInteface
+interface RepositoryInteface
 {
     public function getAll(): Collection;
     public function getPaginate(array $params): LengthAwarePaginator;

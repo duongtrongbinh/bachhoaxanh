@@ -4,7 +4,7 @@ namespace App\Http\Repositories;
 
 use App\Models\Category;
 
-class CategoryBaseRepository extends BaseRepository
+class CategoryRepository extends Repository
 {
     public function getModel()
     {

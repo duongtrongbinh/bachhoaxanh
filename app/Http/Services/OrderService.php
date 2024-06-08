@@ -3,12 +3,9 @@
 
 namespace App\Http\Services;
 
-use App\Http\Repositories\Repository\OrderRepository;
+use App\Http\Repositories\OrderRepository;
 use App\Utils\Constants;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 

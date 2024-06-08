@@ -1,9 +1,8 @@
 <?php
-namespace App\Http\Repositories\Repository;
-use App\Http\Repositories\BaseRepository;
+namespace App\Http\Repositories;
 use App\Models\OrderDetail;
 
-class OrderDetailRepository extends BaseRepository
+class OrderDetailRepository extends Repository
 {
     public function getModel()
     {

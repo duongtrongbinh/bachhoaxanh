@@ -2,12 +2,12 @@
 
 namespace App\Http\Repositories;
 
-use App\Http\Repositories\BaseRepositoryInteface;
+use App\Http\Repositories\RepositoryInteface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
-abstract class BaseRepository implements BaseRepositoryInteface
+abstract class Repository implements RepositoryInteface
 {
     protected $model;
 

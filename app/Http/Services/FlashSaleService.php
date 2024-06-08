@@ -3,11 +3,9 @@
 
 namespace App\Http\Services;
 
-use App\Http\Repositories\Repository\FlashSaleRepository;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use App\Http\Repositories\FlashSaleRepository;
 use App\Utils\Constants;
-
+use Illuminate\Database\Eloquent\Model;
 
 
 class FlashSaleService

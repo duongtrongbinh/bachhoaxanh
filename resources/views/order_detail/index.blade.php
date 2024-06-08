@@ -20,32 +20,31 @@
                                 <th scope="col">Price_regular</th>
                                 <th scope="col">Price_sale</th>
                                 <th scope="col">quantity</th>
-                                <th scope="col">Action</th>
+{{--                                <th scope="col">Action</th>--}}
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($orderDetail as $items)
                                 <tr>
                                     <td>{{ $items->name }}</td>
-                                    <td> <img src="{{ $items->image }}"></td>
+                                    <td><img src="{{ $items->image }}"></td>
                                     <td>{{ $items->price_regular }}</td>
                                     <td>{{ $items->price_sale }}</td>
                                     <td>
                                         {{ $items->quantity}}
                                     </td>
-                                    <td>
-                                        <div class="d-flex" style="gap: 10px">
-                                            <a href=""><button class="btn btn-warning">Order Detail</button></a>
-                                            <form action="" method="post" onclick="return confirm('Bạn có muốn khóa trường này ?')">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-outline-danger">
-                                                    thay đổi trạng thái
-                                                </button>
-                                            </form>
-                                        </div>
-
-                                    </td>
+{{--                                    <td>--}}
+{{--                                        <div class="d-flex" style="gap: 10px">--}}
+{{--                                            <a href=""><button class="btn btn-warning">Order Detail</button></a>--}}
+{{--                                            <form action="" method="post" onclick="return confirm('Bạn có muốn khóa trường này ?')">--}}
+{{--                                                @csrf--}}
+{{--                                                @method('DELETE')--}}
+{{--                                                <button type="submit" class="btn btn-outline-danger">--}}
+{{--                                                    thay đổi trạng thái--}}
+{{--                                                </button>--}}
+{{--                                            </form>--}}
+{{--                                        </div>--}}
+{{--                                    </td>--}}
                                 </tr>
                             @endforeach
                             </tbody>

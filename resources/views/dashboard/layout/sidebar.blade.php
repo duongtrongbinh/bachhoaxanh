@@ -21,6 +21,25 @@
                   </li><!-- End Profile Page Nav -->
               @endforeach
           @endforeach
+          <li class="nav-item">
+              <a class="nav-link " href="/vouchers">
+                  <i class="bi bi-grid"></i>
+                  <span>Vouchers</span>
+              </a>
+          </li>
 
+          <li class="nav-item">
+              <a class="nav-link " href="/flash-sales">
+                  <i class="bi bi-grid"></i>
+                  <span>Flash Sale</span>
+              </a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link " href="/admin/orders">
+                  <i class="bi bi-grid"></i>
+                  <span>orders</span>
+              </a>
+          </li>
       </ul>
   </aside><!-- End Sidebar-->

@@ -37,7 +37,6 @@ class OrderController extends Controller
     public function detail(string $id)
     {
         $orderDetail = $this->orderDetailService->getPaginate($id);
-        dd($orderDetail);
-        return view('order.detail',compact('orderDetail'));
+        return view('order_detail.index',compact('orderDetail'));
     }
 }

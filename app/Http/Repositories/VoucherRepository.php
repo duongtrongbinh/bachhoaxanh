@@ -1,8 +1,8 @@
 <?php
-namespace App\Http\Repositories\Repository;
-use App\Http\Repositories\BaseRepository;
+namespace App\Http\Repositories;
 use App\Models\Voucher;
-class VoucherRepository extends BaseRepository
+
+class VoucherRepository extends Repository
 {
     public function getModel()
     {
