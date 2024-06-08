@@ -38,9 +38,9 @@
 
 <body>
 
-    @include('layout.header')
+    @include('dashboard.layout.header')
 
-    @include('layout.sidebar')
+    @include('dashboard.layout.sidebar')
 
     <main id="main" class="main">
 
@@ -48,7 +48,7 @@
 
     </main><!-- End #main -->
 
-    @include('layout.footer')
+    @include('dashboard.layout.footer')
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

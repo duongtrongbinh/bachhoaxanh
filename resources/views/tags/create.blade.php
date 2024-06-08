@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('dashboard.layout.master')
 @section('title', 'Tag Create')
 @section('content')
     <div class="pagetitle">

@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    const PATH_VIEW = 'dashboard.products.';
+    const PATH_VIEW = 'products.';
     protected $productService;
     protected $brandService;
     protected $categoryService;

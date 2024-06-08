@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
-    const PATH_VIEW = 'dashboard.tags.';
+    const PATH_VIEW = 'tags.';
     protected $tagService;
     protected $productService;
 
