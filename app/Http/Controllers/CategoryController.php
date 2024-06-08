@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    const PATH_VIEW = 'admin.categories.';
+    const PATH_VIEW = 'dashboard.categories.';
     protected $categoryService;
     protected $categoryBannerService;
 

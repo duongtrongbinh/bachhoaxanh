@@ -24,9 +24,9 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], funct
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
-Route::view('', 'admin.dashboard.index')->name('dashboard');
+Route::view('', 'dashboard.dashboard.index')->name('dashboard');
 
-Route::resource('admin/brands', BrandController::class);
-Route::resource('admin/categories', CategoryController::class);
-Route::resource('admin/products', ProductController::class);
-Route::resource('admin/tags', TagController::class);
+Route::resource('dashboard/brands', BrandController::class);
+Route::resource('dashboard/categories', CategoryController::class);
+Route::resource('dashboard/products', ProductController::class);
+Route::resource('dashboard/tags', TagController::class);

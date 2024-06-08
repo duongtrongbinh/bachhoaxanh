@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    const PATH_VIEW = 'admin.brands.';
+    const PATH_VIEW = 'dashboard.brands.';
     protected $brandService;
 
     public function __construct(BrandService $brandService)
