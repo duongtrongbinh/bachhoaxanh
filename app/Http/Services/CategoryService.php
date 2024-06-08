@@ -3,9 +3,6 @@
 namespace App\Http\Services;
 
 use App\Http\Repositories\CategoryRepository;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class CategoryService
 {
@@ -16,38 +13,33 @@ class CategoryService
         $this->categoryRepository = $categoryRepository;
     }
 
-    public function getPaginate(array $params): LengthAwarePaginator|Collection
+    public function getAll()
     {
-        return $this->categoryRepository->getPaginate($params);
-    }
-
-    public function getAll(){
         return $this->categoryRepository->getAll();
     }
 
-    public function create(array $data): Model
+    public function getPaginate($perPage)
     {
-        $data['slug'] = str()->slug($data['name']);
+        return $this->categoryRepository->getPaginate($perPage);
+    }
+
+    public function create($data)
+    {   
         return $this->categoryRepository->create($data);
     }
 
-    public function update(int $id, array $data): Model
-    {
-        return $this->categoryRepository->update($id, $data);
-    }
-
-    public function findOrFail(int $id): Model|null
+    public function findOrFail($id)
     {
         return $this->categoryRepository->findOrFail($id);
     }
 
-    public function destroy(int|array $id): int
+    public function update($id, $data)
     {
-        return $this->categoryRepository->destroy($id);
+        return $this->categoryRepository->update($id, $data);
     }
 
-    public function restore(int|array $id): bool
+    public function destroy($id)
     {
-        return $this->categoryRepository->restore($id);
+        return $this->categoryRepository->delete($id);
     }
 }

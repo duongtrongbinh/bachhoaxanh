@@ -1,59 +1,75 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryBannerCreateRequest;
+use App\Http\Requests\CategoryCreateRequest;
+use App\Http\Services\CategoryBannerService;
 use App\Http\Services\CategoryService;
+use App\Models\Brand;
 use App\Models\Category;
+use App\Models\CategoryBanner;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 
 class CategoryController extends Controller
 {
+    const PATH_VIEW = 'admin.categories.';
     protected $categoryService;
+    protected $categoryBannerService;
 
-    public function __construct(CategoryService $categoryService)
+    public function __construct(CategoryService $categoryService, CategoryBannerService $categoryBannerService)
     {
         $this->categoryService = $categoryService;
+        $this->categoryBannerService = $categoryBannerService;
     }
 
-    public function index(Request $request): JsonResponse
+    public function index()
     {
-        $categories = $this->categoryService->getPaginate($request->validated());
-        return $this->responseOk($categories);
+        $categories = $this->categoryService->getPaginate(5);
+
+        return view(self::PATH_VIEW . __FUNCTION__, compact('categories'));
     }
 
-    public function list()
+    public function create()
     {
-        return $this->responseOk($this->categoryService->getAll());
+        return view(self::PATH_VIEW . __FUNCTION__);
     }
 
-    public function store(Request $request): JsonResponse
+    public function store(CategoryCreateRequest $requestCategory)
     {
-        $author = $this->categoryService->create($request->validated());
-        return $this->responseOk($author);
+        $this->categoryService->create($requestCategory->validated());
+
+        return redirect()
+            ->route('categories.index')
+            ->with('status', 'Success');
     }
 
-    public function show(Category $category): JsonResponse
+    public function show(Category $category)
     {
-        return $this->responseOk($category);
+        $this->categoryService->findOrFail($category->id);
+
+        return view(self::PATH_VIEW . __FUNCTION__, compact('category'));
     }
 
-    public function update(Request $request, Category $category): JsonResponse
+    public function edit(Category $category)
     {
-        $category = $this->categoryService->update($category->id, $request->validated());
-        return $this->responseOk($category);
+        $this->categoryService->findOrFail($category->id);
+
+        return view(self::PATH_VIEW . __FUNCTION__, compact('category'));
     }
 
-    public function destroy(Request $request): JsonResponse
+    public function update(CategoryCreateRequest $request, Category $category)
     {
-        $result = $this->categoryService->destroy($request->id);
-        return $this->responseOk($result);
+        $this->categoryService->update($category->id, $request->validated());
+
+        return back()
+            ->with('status', 'Success');
     }
 
-    public function restore(Request $request): JsonResponse
+    public function destroy(Category $category)
     {
-        $result = $this->categoryService->restore($request->id);
-        return $this->responseOk($result);
+        $this->categoryService->destroy($category->id);
+
+        return back()->with(['status' => 'Success']);
     }
 }

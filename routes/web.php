@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +20,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::view('', 'dashboard.main')->name('dashboard');
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+Route::view('', 'admin.dashboard.index')->name('dashboard');
+
+Route::resource('admin/brands', BrandController::class);
+Route::resource('admin/categories', CategoryController::class);
+Route::resource('admin/products', ProductController::class);
+Route::resource('admin/tags', TagController::class);

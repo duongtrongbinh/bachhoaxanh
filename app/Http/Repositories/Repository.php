@@ -1,13 +1,9 @@
 <?php
-
 namespace App\Http\Repositories;
 
-use App\Http\Repositories\RepositoryInteface;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
+use App\Http\Repositories\RepositoryInterface;
 
-abstract class Repository implements RepositoryInteface
+abstract class Repository implements RepositoryInterface
 {
     protected $model;
 
@@ -18,52 +14,65 @@ abstract class Repository implements RepositoryInteface
 
     abstract public function getModel();
 
-    public function setModel(): void
+    public function setModel()
     {
-        $this->model = app()->make($this->getModel());
+        $this->model = app()->make(
+            $this->getModel()
+        );
     }
 
-    public function getAll(): Collection
+    public function getAll()
     {
-        return $this->model->get();
+        return $this->model->query()->latest('id')->get();
     }
 
-    public function getPaginate(array $params): LengthAwarePaginator
+    public function getAllWithRelations($relations  = [])
     {
-        $query = $this->model->query();
-        if (isset($params['keyword'])) {
-            $query->where('name', 'like', '%' . $params['keyword'] . '%');
-        }
-        if (isset($params['trashed'])) {
-            $query->onlyTrashed();
-        }
-        return $query->paginate();
+        return $this->model->with($relations)->get();
     }
 
-    public function findOrFail(int $id): Model
+    public function getWithRelationId($id, $relations  = [])
     {
-        return $this->model->findOrFail($id);
+        return $this->model->with($relations)->find($id);
     }
 
-    public function create(array $attributes): Model
+    public function getPaginate($perPage)
+    {
+        return $this->model->query()->latest('id')->paginate($perPage);
+    }
+
+    public function findOrFail($id)
+    {
+        $result = $this->model->findOrFail($id);
+
+        return $result;
+    }
+
+    public function create($attributes = [])
     {
         return $this->model->create($attributes);
     }
 
-    public function update(int $id, array $attributes): Model
+    public function update($id, $attributes = [])
     {
-        $model = $this->model->find($id);
-        $model->update($attributes);
-        return $model;
+        $result = $this->findOrFail($id);
+        if ($result) {
+            $result->update($attributes);
+            return $result;
+        }
+
+        return false;
     }
 
-    public function destroy(int|array $id): int
+    public function delete($id)
     {
-        return $this->model->destroy($id);
-    }
+        $result = $this->findOrFail($id);
+        if ($result) {
+            $result->delete();
 
-    public function restore(int|array $id): bool
-    {
-        return $this->model->onlyTrashed()->whereIn('id', is_array($id) ? $id : [$id])->restore();
+            return true;
+        }
+
+        return false;
     }
 }
